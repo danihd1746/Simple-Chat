@@ -19,16 +19,16 @@ document.getElementById('send-button').addEventListener('click', () => {
         return;
     }
 
-    // Bloquear o nome depois que o usuário envia a primeira mensagem
+   
     if (!usernameLocked) {
         usernameInput.setAttribute('disabled', 'true');
         usernameLocked = true;
     }
 
-    // Enviar a mensagem para o servidor
+  
     socket.emit('chatMessage', { username, message });
 
-    // Limpar o campo da mensagem
+    
     messageInput.value = '';
 });
 
